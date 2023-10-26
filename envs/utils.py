@@ -1,3 +1,11 @@
+
+import collections
+import collections.abc
+for type_name in collections.abc.__all__:
+    setattr(collections, type_name, getattr(collections.abc, type_name))
+
+from attrdict import AttrDict
+
 def parse(spec, options):
   """Parses a spec string given a list of options. This can use parametric options, e.g.
   parse(s, ['targetrew(\d*)x']). They can be accessed as e.g. targetrewNx.
